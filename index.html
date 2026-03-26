@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PIMRC 2026 Workshop on Intelligent Integrated Sensing, Communications, and AI</title>
+  <title>Advanced Waveforms for 6G and Beyond: Communications, Sensing, Localization and Their Integration</title>
   <style>
     :root {
       --primary: #123b7a;
@@ -14,7 +14,7 @@
       --border: #dbe3f0;
       --bg: #f7f9fc;
       --white: #ffffff;
-      --max-width: 1080px;
+      --max-width: 1120px;
     }
 
     * { box-sizing: border-box; }
@@ -24,7 +24,7 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.65;
+      line-height: 1.68;
     }
 
     a { color: var(--secondary); text-decoration: none; }
@@ -38,7 +38,7 @@
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 18px 0 56px;
+      padding: 18px 0 58px;
     }
 
     .topbar {
@@ -68,19 +68,20 @@
     }
 
     .hero {
-      padding-top: 56px;
+      padding-top: 54px;
     }
 
     .hero h1 {
       margin: 0 0 16px;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 4vw, 3.15rem);
       line-height: 1.15;
+      max-width: 980px;
     }
 
     .hero p {
       margin: 0 0 14px;
-      max-width: 850px;
-      font-size: 1.06rem;
+      max-width: 860px;
+      font-size: 1.05rem;
       opacity: 0.96;
     }
 
@@ -99,33 +100,6 @@
       padding: 8px 14px;
       border-radius: 999px;
       font-size: 0.95rem;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      transition: 0.2s ease;
-    }
-
-    .button.primary {
-      background: white;
-      color: var(--primary);
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: white;
-      border-color: rgba(255,255,255,0.4);
     }
 
     main {
@@ -252,6 +226,7 @@
       border-left: 4px solid var(--secondary);
       border-radius: 10px;
       color: #234;
+      margin-top: 16px;
     }
 
     footer {
@@ -286,34 +261,25 @@
         <div class="brand">PIMRC 2026 Workshop</div>
         <nav>
           <a href="#overview">Overview</a>
-          <a href="#cfp">CFP</a>
-          <a href="#dates">Dates</a>
-          <a href="#submission">Submission</a>
-          <a href="#program">Program</a>
+          <a href="#cfp">Call for Papers</a>
+          <a href="#dates">Important Dates</a>
           <a href="#organizers">Organizers</a>
-          <a href="#contact">Contact</a>
+          <a href="#tpc">TPC Co-chairs</a>
+          <a href="#steering">Steering Committee</a>
         </nav>
       </div>
 
       <div class="hero">
-        <h1>PIMRC 2026 Workshop on Intelligent Integrated Sensing, Communications, and AI</h1>
+        <h1>Advanced Waveforms for 6G and Beyond: Communications, Sensing, Localization and Their Integration</h1>
         <p>
-          A sample workshop website template for IEEE PIMRC 2026. Replace the title, description, dates,
-          organizers, and submission information with your actual workshop details.
-        </p>
-        <p>
-          This template is designed to be simple, academic, and easy to deploy on GitHub Pages.
+          A PIMRC 2026 workshop dedicated to advanced waveform design and its role in future wireless systems,
+          spanning communications, sensing, localization, and their deep integration.
         </p>
 
         <div class="hero-meta">
+          <span class="badge">1-4 September 2026</span>
+          <span class="badge">Singapore</span>
           <span class="badge">IEEE PIMRC 2026</span>
-          <span class="badge">[City], [Country]</span>
-          <span class="badge">[Workshop Date]</span>
-        </div>
-
-        <div class="cta-row">
-          <a class="button primary" href="#submission">Submit a Paper</a>
-          <a class="button secondary" href="#cfp">Call for Papers</a>
         </div>
       </div>
     </div>
@@ -323,65 +289,63 @@
     <div class="container">
       <section id="overview">
         <h2>Overview</h2>
-        <p class="lead">
-          This workshop will bring together researchers and practitioners from academia and industry to discuss
-          recent advances in integrated sensing and communications, AI-native wireless systems, near-field sensing,
-          semantic communications, foundation models for wireless, and related topics.
+        <p>
+          Next-generation wireless systems rely on advanced waveforms to deliver enhanced user-experienced data rate,
+          ultra-reliability, ultra-low latency, massive connectivity, and seamless integration with emerging technologies,
+          such as artificial intelligence (AI) and extremely high frequency (EHF) bands. The Third Generation Partnership
+          Project (3GPP)'s early consensus for sixth generation (6G) wireless communication systems landed on the orthogonal
+          frequency division multiplexing (OFDM) family, namely cyclic prefix OFDM (CP-OFDM) and discrete Fourier transform
+          spread OFDM (DFT-s-OFDM). However, continued investigation into advanced waveforms remains critical for addressing
+          emerging challenges and unlocking new capabilities.
         </p>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Scope</h3>
-            <p>
-              Describe the workshop motivation here. Explain why this topic is timely for the PIMRC community and
-              how it complements the main conference.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Audience</h3>
-            <p>
-              Researchers in wireless communications, signal processing, machine learning, ISAC, networking,
-              and emerging 6G systems.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Format</h3>
-            <p>
-              A half-day or full-day workshop including invited talks, contributed papers, panel discussions,
-              and poster presentations.
-            </p>
-          </div>
-        </div>
+        <p>
+          In the first place, the plethora of dynamic environments in 6G and beyond, such as high-speed trains, connected
+          vehicles, high-altitude platform stations, and low-Earth orbit satellites, demands seamless and reliable information
+          transmission. Communications in such environments face severe Doppler spreads, under which the widely deployed OFDM
+          systems may become incompetent due to severe inter-carrier interference (ICI). Secondly, future wireless networks are
+          expected to enable sensing and localization capabilities towards pervasive intelligent networks, facilitating unparalleled
+          environmental and situational awareness across diverse use cases.
+        </p>
+        <p>
+          Against this background, advanced waveforms such as orthogonal time frequency space (OTFS), orthogonal delay division
+          multiplexing (ODDM), orthogonal chirp division multiplexing (OCDM), affine frequency division multiplexing (AFDM),
+          interleave frequency division multiplexing (IFDM), and others are emerging as promising solutions for 6G and beyond.
+          These waveforms are being tailored to operate effectively in high-dynamic environments, extremely high frequency (EHF)
+          bands, ultra-reliable low-latency communication (URLLC), localization, and integrated sensing and communications (ISAC).
+          The advent of these advanced waveforms presents an opportunity to redefine the foundations of future wireless networks.
+        </p>
       </section>
 
       <section id="cfp">
         <h2>Call for Papers</h2>
         <p>
-          We invite original research contributions on all aspects related to the theme of this workshop.
-          Topics of interest include, but are not limited to:
+          The workshop welcomes submissions of original papers presenting, assessing, and discussing critical technical hurdles,
+          recent innovations, and novel applications of advanced waveforms-related communications, sensing, and localization, as
+          well as their integrations. The topics of interest include, but are not limited to:
         </p>
         <div class="grid-2">
           <div class="card">
-            <h3>Technical Topics</h3>
             <ul class="clean">
-              <li>Integrated sensing and communications (ISAC)</li>
-              <li>Near-field communications and sensing</li>
-              <li>AI-native air interface and network optimization</li>
-              <li>Generative AI and foundation models for wireless systems</li>
-              <li>Channel estimation, beam training, and CSI feedback</li>
-              <li>Joint communication, sensing, localization, and control</li>
-              <li>Waveform and transceiver design for 6G</li>
+              <li>Channel coding for new waveforms</li>
+              <li>Signal processing for waveform-based transceiver designs</li>
+              <li>Algorithm design for efficient channel estimation and data detection</li>
+              <li>Preamble sequence design and analysis for new waveforms</li>
+              <li>PAPR reduction for new waveforms</li>
+              <li>Channel measurement and modelling for new waveform-based systems</li>
+              <li>Information theoretical analysis of waveform design</li>
+              <li>Development of integrated sensing/localization and communications</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Application Topics</h3>
             <ul class="clean">
-              <li>Autonomous systems and robotics</li>
-              <li>Vehicular and aerial wireless networks</li>
-              <li>Digital twins and environment-aware communications</li>
-              <li>Edge intelligence and distributed learning</li>
-              <li>Energy-efficient and sustainable AI-enabled wireless</li>
-              <li>Testbeds, prototypes, and experimental validation</li>
-              <li>Standardization and practical deployment issues</li>
+              <li>MIMO and cell-free massive MIMO-aided systems</li>
+              <li>Waveform-aided next-generation multiple access</li>
+              <li>New waveform-assisted URLLC</li>
+              <li>Waveform design under cross-disciplinary communication architectures (e.g., quantum, Rydberg atomic, or molecular communications)</li>
+              <li>Design and evaluation of new waveforms over high-mobility channels</li>
+              <li>AI-aided new waveform design</li>
+              <li>Physical layer security of emerging waveforms</li>
+              <li>Hardware prototyping, standardization, trials, and applications of new waveforms</li>
             </ul>
           </div>
         </div>
@@ -391,155 +355,124 @@
         <h2>Important Dates</h2>
         <div class="date-list">
           <div class="date-item">
-            <strong>Paper Submission Deadline</strong>
-            <span>[Month Day, 2026]</span>
+            <strong>Workshop CFP Release</strong>
+            <span>1 April 2026</span>
+          </div>
+          <div class="date-item">
+            <strong>Workshop Paper Submission Deadline</strong>
+            <span>5 June 2026</span>
           </div>
           <div class="date-item">
             <strong>Acceptance Notification</strong>
-            <span>[Month Day, 2026]</span>
+            <span>8 July 2026</span>
           </div>
           <div class="date-item">
-            <strong>Camera-Ready Deadline</strong>
-            <span>[Month Day, 2026]</span>
-          </div>
-          <div class="date-item">
-            <strong>Workshop Date</strong>
-            <span>[Month Day, 2026]</span>
+            <strong>Camera-Ready Paper Deadline</strong>
+            <span>1 August 2026</span>
           </div>
         </div>
-        <p class="notice">
-          All deadlines are 23:59 AoE unless otherwise specified.
-        </p>
-      </section>
-
-      <section id="submission">
-        <h2>Submission Guidelines</h2>
-        <div class="grid-2">
-          <div>
-            <p>
-              Authors are invited to submit original papers that have not been published or are not currently under
-              review elsewhere. Submissions should follow the standard IEEE conference format.
-            </p>
-            <ul class="clean">
-              <li>Paper length: [e.g., up to 6 pages, including references]</li>
-              <li>Format: IEEE conference style</li>
-              <li>Submission system: [EDAS / CMT / OpenReview / EasyChair]</li>
-              <li>Proceedings: accepted papers will be included in the workshop proceedings subject to IEEE policy</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Submission Link</h3>
-            <p>
-              Replace this placeholder with the actual paper submission link.
-            </p>
-            <p>
-              <a href="#">[Insert Submission Portal Link]</a>
-            </p>
-            <h3>Template</h3>
-            <p>
-              <a href="#">IEEE Conference Template</a>
-            </p>
-          </div>
+        <div class="notice">
+          Workshop date: 1-4 September 2026, Singapore.
         </div>
-      </section>
-
-      <section id="program">
-        <h2>Preliminary Program</h2>
-        <p class="lead">
-          A sample program table is provided below. You can replace it later with keynote information,
-          accepted paper sessions, and a panel schedule.
-        </p>
-        <table>
-          <thead>
-            <tr>
-              <th style="width: 20%;">Time</th>
-              <th>Session</th>
-              <th style="width: 28%;">Speaker / Chair</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>09:00–09:10</td>
-              <td>Opening Remarks</td>
-              <td>Workshop Chairs</td>
-            </tr>
-            <tr>
-              <td>09:10–09:50</td>
-              <td>Keynote Talk 1</td>
-              <td>[Speaker Name]</td>
-            </tr>
-            <tr>
-              <td>09:50–10:30</td>
-              <td>Technical Session I</td>
-              <td>[Session Chair]</td>
-            </tr>
-            <tr>
-              <td>10:30–10:50</td>
-              <td>Coffee Break</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>10:50–11:30</td>
-              <td>Keynote Talk 2</td>
-              <td>[Speaker Name]</td>
-            </tr>
-            <tr>
-              <td>11:30–12:10</td>
-              <td>Panel Discussion / Technical Session II</td>
-              <td>[Panelists / Chair]</td>
-            </tr>
-            <tr>
-              <td>12:10–12:20</td>
-              <td>Closing Remarks</td>
-              <td>Workshop Chairs</td>
-            </tr>
-          </tbody>
-        </table>
       </section>
 
       <section id="organizers">
         <h2>Organizers</h2>
         <div class="people">
           <div class="person">
-            <div class="person-name">[Organizer Name 1]</div>
-            <div class="person-role">[Affiliation]</div>
-            <p>Short bio or responsibility, e.g., General Chair / TPC Chair.</p>
+            <div class="person-name">Yao Ge</div>
+            <div class="person-role">Nanyang Technological University, Singapore</div>
           </div>
           <div class="person">
-            <div class="person-name">[Organizer Name 2]</div>
-            <div class="person-role">[Affiliation]</div>
-            <p>Short bio or responsibility, e.g., Publication Chair / Publicity Chair.</p>
+            <div class="person-name">Zeping Sui</div>
+            <div class="person-role">University of Essex, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">[Organizer Name 3]</div>
-            <div class="person-role">[Affiliation]</div>
-            <p>Short bio or responsibility.</p>
+            <div class="person-name">Tianqi Mao</div>
+            <div class="person-role">Beijing Institute of Technology, China</div>
           </div>
           <div class="person">
-            <div class="person-name">[Organizer Name 4]</div>
-            <div class="person-role">[Affiliation]</div>
-            <p>Short bio or responsibility.</p>
+            <div class="person-name">Ertugrul Basar</div>
+            <div class="person-role">Tampere University, Finland</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Michail Matthaiou</div>
+            <div class="person-role">Queen's University Belfast, U.K.</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Huseyin Arslan</div>
+            <div class="person-role">Istanbul Medipol University, Türkiye</div>
           </div>
         </div>
       </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          For questions related to the workshop, please contact:
-        </p>
-        <ul class="clean">
-          <li>[Name], [Affiliation], <a href="mailto:your_email@example.com">your_email@example.com</a></li>
-          <li>[Name], [Affiliation], <a href="mailto:your_email@example.com">your_email@example.com</a></li>
-        </ul>
+      <section id="tpc">
+        <h2>TPC Co-chairs</h2>
+        <div class="people">
+          <div class="person">
+            <div class="person-name">Zilong Liu</div>
+            <div class="person-role">University of Essex, U.K.</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Miaowen Wen</div>
+            <div class="person-role">South China University of Technology, China</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Arman Farhang</div>
+            <div class="person-role">Trinity College Dublin, Ireland</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Qinwen Deng</div>
+            <div class="person-role">Nanyang Technological University, Singapore</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Qu Luo</div>
+            <div class="person-role">University of Surrey, U.K.</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Fan Zhang</div>
+            <div class="person-role">Tsinghua University, China</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="steering">
+        <h2>Steering Committee Members</h2>
+        <div class="people">
+          <div class="person">
+            <div class="person-name">Sumei Sun</div>
+            <div class="person-role">Agency for Science, Technology and Research, Singapore</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Yong Liang Guan</div>
+            <div class="person-role">Nanyang Technological University, Singapore</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Christos Masouros</div>
+            <div class="person-role">University College London, U.K.</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Pei Xiao</div>
+            <div class="person-role">University of Surrey, U.K.</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Pingzhi Fan</div>
+            <div class="person-role">Southwest Jiaotong University, China</div>
+          </div>
+          <div class="person">
+            <div class="person-name">Lajos Hanzo</div>
+            <div class="person-role">University of Southampton, U.K.</div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
 
   <footer>
     <div class="container">
-      Template for a PIMRC 2026 workshop website. Built as a single static HTML page for easy GitHub Pages deployment.
+      PIMRC 2026 Workshop Website Template.
     </div>
   </footer>
 </body>
 </html>
+
