@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIMRC 2026 Workshop on Intelligent Integrated Sensing, Communications, and AI</title>
+  <style>
+    :root {
+      --primary: #123b7a;
+      --secondary: #1f5fbf;
+      --accent: #e9f1ff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #dbe3f0;
+      --bg: #f7f9fc;
+      --white: #ffffff;
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: var(--secondary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 18px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      font-size: 0.98rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding-top: 56px;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      max-width: 850px;
+      font-size: 1.06rem;
+      opacity: 0.96;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    main {
+      margin-top: -28px;
+      padding-bottom: 56px;
+    }
+
+    section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(18,59,122,0.05);
+    }
+
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 1.55rem;
+    }
+
+    .lead {
+      font-size: 1.02rem;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-size: 1.08rem;
+    }
+
+    ul.clean {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    ul.clean li { margin-bottom: 8px; }
+
+    .date-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .date-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fcfdff;
+    }
+
+    .date-item strong { color: var(--primary); }
+
+    .people {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .person {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fcfdff;
+    }
+
+    .person-name {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .person-role {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--primary);
+      background: #f4f8ff;
+    }
+
+    .notice {
+      padding: 14px 16px;
+      background: var(--accent);
+      border-left: 4px solid var(--secondary);
+      border-radius: 10px;
+      color: #234;
+    }
+
+    footer {
+      padding: 22px 0 38px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .people {
+        grid-template-columns: 1fr;
+      }
+
+      .date-item {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 22px 18px; }
+      nav { gap: 12px; }
+      .hero { padding-top: 40px; }
+      header { padding-bottom: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">PIMRC 2026 Workshop</div>
+        <nav>
+          <a href="#overview">Overview</a>
+          <a href="#cfp">CFP</a>
+          <a href="#dates">Dates</a>
+          <a href="#submission">Submission</a>
+          <a href="#program">Program</a>
+          <a href="#organizers">Organizers</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="hero">
+        <h1>PIMRC 2026 Workshop on Intelligent Integrated Sensing, Communications, and AI</h1>
+        <p>
+          A sample workshop website template for IEEE PIMRC 2026. Replace the title, description, dates,
+          organizers, and submission information with your actual workshop details.
+        </p>
+        <p>
+          This template is designed to be simple, academic, and easy to deploy on GitHub Pages.
+        </p>
+
+        <div class="hero-meta">
+          <span class="badge">IEEE PIMRC 2026</span>
+          <span class="badge">[City], [Country]</span>
+          <span class="badge">[Workshop Date]</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="button primary" href="#submission">Submit a Paper</a>
+          <a class="button secondary" href="#cfp">Call for Papers</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="overview">
+        <h2>Overview</h2>
+        <p class="lead">
+          This workshop will bring together researchers and practitioners from academia and industry to discuss
+          recent advances in integrated sensing and communications, AI-native wireless systems, near-field sensing,
+          semantic communications, foundation models for wireless, and related topics.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Scope</h3>
+            <p>
+              Describe the workshop motivation here. Explain why this topic is timely for the PIMRC community and
+              how it complements the main conference.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Audience</h3>
+            <p>
+              Researchers in wireless communications, signal processing, machine learning, ISAC, networking,
+              and emerging 6G systems.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Format</h3>
+            <p>
+              A half-day or full-day workshop including invited talks, contributed papers, panel discussions,
+              and poster presentations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cfp">
+        <h2>Call for Papers</h2>
+        <p>
+          We invite original research contributions on all aspects related to the theme of this workshop.
+          Topics of interest include, but are not limited to:
+        </p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Technical Topics</h3>
+            <ul class="clean">
+              <li>Integrated sensing and communications (ISAC)</li>
+              <li>Near-field communications and sensing</li>
+              <li>AI-native air interface and network optimization</li>
+              <li>Generative AI and foundation models for wireless systems</li>
+              <li>Channel estimation, beam training, and CSI feedback</li>
+              <li>Joint communication, sensing, localization, and control</li>
+              <li>Waveform and transceiver design for 6G</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Application Topics</h3>
+            <ul class="clean">
+              <li>Autonomous systems and robotics</li>
+              <li>Vehicular and aerial wireless networks</li>
+              <li>Digital twins and environment-aware communications</li>
+              <li>Edge intelligence and distributed learning</li>
+              <li>Energy-efficient and sustainable AI-enabled wireless</li>
+              <li>Testbeds, prototypes, and experimental validation</li>
+              <li>Standardization and practical deployment issues</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="dates">
+        <h2>Important Dates</h2>
+        <div class="date-list">
+          <div class="date-item">
+            <strong>Paper Submission Deadline</strong>
+            <span>[Month Day, 2026]</span>
+          </div>
+          <div class="date-item">
+            <strong>Acceptance Notification</strong>
+            <span>[Month Day, 2026]</span>
+          </div>
+          <div class="date-item">
+            <strong>Camera-Ready Deadline</strong>
+            <span>[Month Day, 2026]</span>
+          </div>
+          <div class="date-item">
+            <strong>Workshop Date</strong>
+            <span>[Month Day, 2026]</span>
+          </div>
+        </div>
+        <p class="notice">
+          All deadlines are 23:59 AoE unless otherwise specified.
+        </p>
+      </section>
+
+      <section id="submission">
+        <h2>Submission Guidelines</h2>
+        <div class="grid-2">
+          <div>
+            <p>
+              Authors are invited to submit original papers that have not been published or are not currently under
+              review elsewhere. Submissions should follow the standard IEEE conference format.
+            </p>
+            <ul class="clean">
+              <li>Paper length: [e.g., up to 6 pages, including references]</li>
+              <li>Format: IEEE conference style</li>
+              <li>Submission system: [EDAS / CMT / OpenReview / EasyChair]</li>
+              <li>Proceedings: accepted papers will be included in the workshop proceedings subject to IEEE policy</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Submission Link</h3>
+            <p>
+              Replace this placeholder with the actual paper submission link.
+            </p>
+            <p>
+              <a href="#">[Insert Submission Portal Link]</a>
+            </p>
+            <h3>Template</h3>
+            <p>
+              <a href="#">IEEE Conference Template</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="program">
+        <h2>Preliminary Program</h2>
+        <p class="lead">
+          A sample program table is provided below. You can replace it later with keynote information,
+          accepted paper sessions, and a panel schedule.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">Time</th>
+              <th>Session</th>
+              <th style="width: 28%;">Speaker / Chair</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:00–09:10</td>
+              <td>Opening Remarks</td>
+              <td>Workshop Chairs</td>
+            </tr>
+            <tr>
+              <td>09:10–09:50</td>
+              <td>Keynote Talk 1</td>
+              <td>[Speaker Name]</td>
+            </tr>
+            <tr>
+              <td>09:50–10:30</td>
+              <td>Technical Session I</td>
+              <td>[Session Chair]</td>
+            </tr>
+            <tr>
+              <td>10:30–10:50</td>
+              <td>Coffee Break</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>10:50–11:30</td>
+              <td>Keynote Talk 2</td>
+              <td>[Speaker Name]</td>
+            </tr>
+            <tr>
+              <td>11:30–12:10</td>
+              <td>Panel Discussion / Technical Session II</td>
+              <td>[Panelists / Chair]</td>
+            </tr>
+            <tr>
+              <td>12:10–12:20</td>
+              <td>Closing Remarks</td>
+              <td>Workshop Chairs</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="organizers">
+        <h2>Organizers</h2>
+        <div class="people">
+          <div class="person">
+            <div class="person-name">[Organizer Name 1]</div>
+            <div class="person-role">[Affiliation]</div>
+            <p>Short bio or responsibility, e.g., General Chair / TPC Chair.</p>
+          </div>
+          <div class="person">
+            <div class="person-name">[Organizer Name 2]</div>
+            <div class="person-role">[Affiliation]</div>
+            <p>Short bio or responsibility, e.g., Publication Chair / Publicity Chair.</p>
+          </div>
+          <div class="person">
+            <div class="person-name">[Organizer Name 3]</div>
+            <div class="person-role">[Affiliation]</div>
+            <p>Short bio or responsibility.</p>
+          </div>
+          <div class="person">
+            <div class="person-name">[Organizer Name 4]</div>
+            <div class="person-role">[Affiliation]</div>
+            <p>Short bio or responsibility.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          For questions related to the workshop, please contact:
+        </p>
+        <ul class="clean">
+          <li>[Name], [Affiliation], <a href="mailto:your_email@example.com">your_email@example.com</a></li>
+          <li>[Name], [Affiliation], <a href="mailto:your_email@example.com">your_email@example.com</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Template for a PIMRC 2026 workshop website. Built as a single static HTML page for easy GitHub Pages deployment.
+    </div>
+  </footer>
+</body>
+</html>
