@@ -39,23 +39,28 @@
     header {
       position: relative;
       color: white;
-      padding: 10px 0 40px;
+      height: 260px;
+      display: flex;
+      align-items: center;
       background-image: linear-gradient(rgba(10, 22, 50, 0.35), rgba(10, 22, 50, 0.35)), url('20260327221115.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       background-color: #0a1632;
-      height: 260px;
-      display: flex;
-      align-items: center;
+      overflow: hidden;
     }
 
     .topbar {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
+      z-index: 2;
     }
 
     .brand {
@@ -87,7 +92,8 @@
     .hero {
       width: 100%;
       text-align: center;
-      padding: 0;
+      padding-top: 26px;
+      z-index: 1;
     }
 
     .hero-line1 {
@@ -103,7 +109,7 @@
       line-height: 1.25;
       margin-bottom: 10px;
       text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      max-width: 1000px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -114,24 +120,9 @@
       text-shadow: 0 2px 6px rgba(0,0,0,0.35);
     }
 
-    .hero h1 {
-      margin: 0 auto 18px;
-      font-size: clamp(2rem, 3.4vw, 3.05rem);
-      line-height: 1.18;
-      max-width: 1400px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.38);
-    }
-
-    .hero-date {
-      margin: 0;
-      font-size: clamp(1.7rem, 2.6vw, 2.45rem);
-      font-weight: 700;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-    }
-
     main {
-      margin-top: -28px;
-      padding-bottom: 56px;
+      margin-top: 0;
+      padding: 28px 0 56px;
     }
 
     section {
@@ -185,14 +176,14 @@
       background: #fff6f6;
     }
 
-    .date-item span {
-      color: var(--date-red);
-      font-weight: 700;
-    }
-
     .date-item strong {
       color: var(--text);
       font-weight: 600;
+    }
+
+    .date-item span {
+      color: var(--date-red);
+      font-weight: 700;
     }
 
     .people {
@@ -212,16 +203,12 @@
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 4px;
+      word-break: break-word;
     }
 
     .person-role {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-
-    .person-email {
-      font-size: 0.93rem;
     }
 
     .notice {
@@ -249,16 +236,27 @@
         flex-direction: column;
       }
 
+      header {
+        height: 300px;
+      }
+
       .hero {
-        padding-top: 66px;
+        padding-top: 40px;
       }
     }
 
     @media (max-width: 640px) {
       section { padding: 22px 18px; }
       nav { gap: 12px; }
-      .hero { padding-top: 50px; }
-      header { padding-bottom: 48px; }
+      header { height: 320px; }
+      .topbar {
+        position: static;
+        justify-content: center;
+        padding-top: 12px;
+      }
+      .hero {
+        padding-top: 16px;
+      }
     }
   </style>
 </head>
@@ -375,99 +373,43 @@
       <section id="organizers">
         <h2>Organizers</h2>
         <div class="people">
-          <div class="person">
-            <div class="person-name">Yao Ge (yao.ge@ntu.edu.sg)</div>
-            <div class="person-role">Nanyang Technological University, Singapore</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Zeping Sui (z.sui@essex.ac.uk)</div>
-            <div class="person-role">University of Essex, U.K.</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Tianqi Mao (maotq@bit.edu.cn)</div>
-            <div class="person-role">Beijing Institute of Technology, China</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Ertugrul Basar (ertugrul.basar@tuni.fi)</div>
-            <div class="person-role">Tampere University, Finland</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Michail Matthaiou (m.matthaiou@qub.ac.uk)</div>
-            <div class="person-role">Queen's University Belfast, U.K.</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Huseyin Arslan (huseyinarslan@medipol.edu.tr)</div>
-            <div class="person-role">Istanbul Medipol University, Türkiye</div>
-          </div>
+          <div class="person"><div class="person-name">Yao Ge (yao.ge@ntu.edu.sg)</div><div class="person-role">Nanyang Technological University, Singapore</div></div>
+          <div class="person"><div class="person-name">Zeping Sui (z.sui@essex.ac.uk)</div><div class="person-role">University of Essex, U.K.</div></div>
+          <div class="person"><div class="person-name">Tianqi Mao (maotq@bit.edu.cn)</div><div class="person-role">Beijing Institute of Technology, China</div></div>
+          <div class="person"><div class="person-name">Ertugrul Basar (ertugrul.basar@tuni.fi)</div><div class="person-role">Tampere University, Finland</div></div>
+          <div class="person"><div class="person-name">Michail Matthaiou (m.matthaiou@qub.ac.uk)</div><div class="person-role">Queen's University Belfast, U.K.</div></div>
+          <div class="person"><div class="person-name">Huseyin Arslan (huseyinarslan@medipol.edu.tr)</div><div class="person-role">Istanbul Medipol University, Türkiye</div></div>
         </div>
       </section>
 
       <section id="tpc">
         <h2>TPC Co-chairs</h2>
         <div class="people">
-          <div class="person">
-            <div class="person-name">Zilong Liu (zilong.liu@essex.ac.uk)</div>
-            <div class="person-role">University of Essex, U.K.</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Miaowen Wen (eemwwen@scut.edu.cn)</div>
-            <div class="person-role">South China University of Technology, China</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Arman Farhang (arman.farhang@tcd.ie)</div>
-            <div class="person-role">Trinity College Dublin, Ireland</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Qinwen Deng (qinwen.deng@ntu.edu.sg)</div>
-            <div class="person-role">Nanyang Technological University, Singapore</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Qu Luo (q.u.luo@surrey.ac.uk)</div>
-            <div class="person-role">University of Surrey, U.K.</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Fan Zhang (zf22@mails.tsinghua.edu.cn)</div>
-            <div class="person-role">Tsinghua University, China</div>
-          </div>
+          <div class="person"><div class="person-name">Zilong Liu (zilong.liu@essex.ac.uk)</div><div class="person-role">University of Essex, U.K.</div></div>
+          <div class="person"><div class="person-name">Miaowen Wen (eemwwen@scut.edu.cn)</div><div class="person-role">South China University of Technology, China</div></div>
+          <div class="person"><div class="person-name">Arman Farhang (arman.farhang@tcd.ie)</div><div class="person-role">Trinity College Dublin, Ireland</div></div>
+          <div class="person"><div class="person-name">Qinwen Deng (qinwen.deng@ntu.edu.sg)</div><div class="person-role">Nanyang Technological University, Singapore</div></div>
+          <div class="person"><div class="person-name">Qu Luo (q.u.luo@surrey.ac.uk)</div><div class="person-role">University of Surrey, U.K.</div></div>
+          <div class="person"><div class="person-name">Fan Zhang (zf22@mails.tsinghua.edu.cn)</div><div class="person-role">Tsinghua University, China</div></div>
         </div>
       </section>
 
       <section id="steering">
         <h2>Steering Committee Members</h2>
         <div class="people">
-          <div class="person">
-            <div class="person-name">Sumei Sun (sunsm@a-star.edu.sg)</div>
-            <div class="person-role">Agency for Science, Technology and Research, Singapore</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Yong Liang Guan (eylguan@ntu.edu.sg)</div>
-            <div class="person-role">Nanyang Technological University, Singapore</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Christos Masouros (c.masouros@ucl.ac.uk)</div>
-            <div class="person-role">University College London, U.K.</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Pei Xiao (p.xiao@surrey.ac.uk)</div>
-            <div class="person-role">University of Surrey, U.K.</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Pingzhi Fan (pzfan@swjtu.edu.cn)</div>
-            <div class="person-role">Southwest Jiaotong University, China</div>
-          </div>
-          <div class="person">
-            <div class="person-name">Lajos Hanzo (lh@ecs.soton.ac.uk)</div>
-            <div class="person-role">University of Southampton, U.K.</div>
-          </div>
+          <div class="person"><div class="person-name">Sumei Sun (sunsm@a-star.edu.sg)</div><div class="person-role">Agency for Science, Technology and Research, Singapore</div></div>
+          <div class="person"><div class="person-name">Yong Liang Guan (eylguan@ntu.edu.sg)</div><div class="person-role">Nanyang Technological University, Singapore</div></div>
+          <div class="person"><div class="person-name">Christos Masouros (c.masouros@ucl.ac.uk)</div><div class="person-role">University College London, U.K.</div></div>
+          <div class="person"><div class="person-name">Pei Xiao (p.xiao@surrey.ac.uk)</div><div class="person-role">University of Surrey, U.K.</div></div>
+          <div class="person"><div class="person-name">Pingzhi Fan (pzfan@swjtu.edu.cn)</div><div class="person-role">Southwest Jiaotong University, China</div></div>
+          <div class="person"><div class="person-name">Lajos Hanzo (lh@ecs.soton.ac.uk)</div><div class="person-role">University of Southampton, U.K.</div></div>
         </div>
       </section>
     </div>
   </main>
 
   <footer>
-    <div class="container">
-      PIMRC 2026 Workshop Website Template.
-    </div>
+    <div class="container">PIMRC 2026 Workshop Website Template.</div>
   </footer>
 </body>
 </html>
