@@ -14,6 +14,7 @@
       --border: #dbe3f0;
       --bg: #f7f9fc;
       --white: #ffffff;
+      --date-red: #c62828;
       --max-width: 1120px;
     }
 
@@ -36,9 +37,13 @@
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      position: relative;
       color: white;
       padding: 18px 0 58px;
+      background-image: linear-gradient(rgba(10, 22, 50, 0.46), rgba(10, 22, 50, 0.46)), url('20260327221115.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .topbar {
@@ -53,53 +58,53 @@
       font-weight: 700;
       letter-spacing: 0.3px;
       font-size: 0.98rem;
+      background: rgba(255,255,255,0.10);
+      padding: 8px 14px;
+      border-radius: 10px;
+      backdrop-filter: blur(2px);
     }
 
     nav {
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
+      background: rgba(255,255,255,0.10);
+      padding: 8px 14px;
+      border-radius: 10px;
+      backdrop-filter: blur(2px);
     }
 
     nav a {
       color: white;
-      opacity: 0.95;
+      opacity: 0.96;
       font-size: 0.95rem;
     }
 
     .hero {
-      padding-top: 54px;
+      padding: 86px 0 32px;
+      text-align: center;
+    }
+
+    .hero-kicker {
+      margin: 0 0 18px;
+      font-size: clamp(1.5rem, 2.4vw, 2.35rem);
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     }
 
     .hero h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      line-height: 1.15;
-      max-width: 980px;
+      margin: 0 auto 18px;
+      font-size: clamp(2rem, 3.4vw, 3.05rem);
+      line-height: 1.18;
+      max-width: 1400px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.38);
     }
 
-    .hero p {
-      margin: 0 0 14px;
-      max-width: 860px;
-      font-size: 1.05rem;
-      opacity: 0.96;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.14);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.22);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.95rem;
+    .hero-date {
+      margin: 0;
+      font-size: clamp(1.7rem, 2.6vw, 2.45rem);
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     }
 
     main {
@@ -123,20 +128,9 @@
       font-size: 1.55rem;
     }
 
-    .lead {
-      font-size: 1.02rem;
-      color: var(--muted);
-    }
-
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -145,13 +139,6 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 18px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      color: var(--primary);
-      font-size: 1.08rem;
     }
 
     ul.clean {
@@ -171,12 +158,20 @@
       justify-content: space-between;
       gap: 16px;
       padding: 14px 16px;
-      border: 1px solid var(--border);
+      border: 1px solid #f0c2c2;
       border-radius: 12px;
-      background: #fcfdff;
+      background: #fff6f6;
     }
 
-    .date-item strong { color: var(--primary); }
+    .date-item span {
+      color: var(--date-red);
+      font-weight: 700;
+    }
+
+    .date-item strong {
+      color: var(--text);
+      font-weight: 600;
+    }
 
     .people {
       display: grid;
@@ -200,24 +195,11 @@
     .person-role {
       color: var(--muted);
       font-size: 0.95rem;
+      margin-bottom: 6px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 12px 10px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    th {
-      color: var(--primary);
-      background: #f4f8ff;
+    .person-email {
+      font-size: 0.93rem;
     }
 
     .notice {
@@ -237,19 +219,23 @@
     }
 
     @media (max-width: 900px) {
-      .grid-2, .grid-3, .people {
+      .grid-2, .people {
         grid-template-columns: 1fr;
       }
 
       .date-item {
         flex-direction: column;
       }
+
+      .hero {
+        padding-top: 66px;
+      }
     }
 
     @media (max-width: 640px) {
       section { padding: 22px 18px; }
       nav { gap: 12px; }
-      .hero { padding-top: 40px; }
+      .hero { padding-top: 50px; }
       header { padding-bottom: 48px; }
     }
   </style>
@@ -270,17 +256,9 @@
       </div>
 
       <div class="hero">
+        <p class="hero-kicker">IEEE PIMRC 2026 Workshop</p>
         <h1>Advanced Waveforms for 6G and Beyond: Communications, Sensing, Localization and Their Integration</h1>
-        <p>
-          A PIMRC 2026 workshop dedicated to advanced waveform design and its role in future wireless systems,
-          spanning communications, sensing, localization, and their deep integration.
-        </p>
-
-        <div class="hero-meta">
-          <span class="badge">1-4 September 2026</span>
-          <span class="badge">Singapore</span>
-          <span class="badge">IEEE PIMRC 2026</span>
-        </div>
+        <p class="hero-date">1-4 September 2026 | Singapore</p>
       </div>
     </div>
   </header>
@@ -355,10 +333,6 @@
         <h2>Important Dates</h2>
         <div class="date-list">
           <div class="date-item">
-            <strong>Workshop CFP Release</strong>
-            <span>1 April 2026</span>
-          </div>
-          <div class="date-item">
             <strong>Workshop Paper Submission Deadline</strong>
             <span>5 June 2026</span>
           </div>
@@ -380,27 +354,27 @@
         <h2>Organizers</h2>
         <div class="people">
           <div class="person">
-            <div class="person-name">Yao Ge</div>
+            <div class="person-name">Yao Ge (yao.ge@ntu.edu.sg)</div>
             <div class="person-role">Nanyang Technological University, Singapore</div>
           </div>
           <div class="person">
-            <div class="person-name">Zeping Sui</div>
+            <div class="person-name">Zeping Sui (z.sui@essex.ac.uk)</div>
             <div class="person-role">University of Essex, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">Tianqi Mao</div>
+            <div class="person-name">Tianqi Mao (maotq@bit.edu.cn)</div>
             <div class="person-role">Beijing Institute of Technology, China</div>
           </div>
           <div class="person">
-            <div class="person-name">Ertugrul Basar</div>
+            <div class="person-name">Ertugrul Basar (ertugrul.basar@tuni.fi)</div>
             <div class="person-role">Tampere University, Finland</div>
           </div>
           <div class="person">
-            <div class="person-name">Michail Matthaiou</div>
+            <div class="person-name">Michail Matthaiou (m.matthaiou@qub.ac.uk)</div>
             <div class="person-role">Queen's University Belfast, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">Huseyin Arslan</div>
+            <div class="person-name">Huseyin Arslan (huseyinarslan@medipol.edu.tr)</div>
             <div class="person-role">Istanbul Medipol University, Türkiye</div>
           </div>
         </div>
@@ -410,27 +384,27 @@
         <h2>TPC Co-chairs</h2>
         <div class="people">
           <div class="person">
-            <div class="person-name">Zilong Liu</div>
+            <div class="person-name">Zilong Liu (zilong.liu@essex.ac.uk)</div>
             <div class="person-role">University of Essex, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">Miaowen Wen</div>
+            <div class="person-name">Miaowen Wen (eemwwen@scut.edu.cn)</div>
             <div class="person-role">South China University of Technology, China</div>
           </div>
           <div class="person">
-            <div class="person-name">Arman Farhang</div>
+            <div class="person-name">Arman Farhang (arman.farhang@tcd.ie)</div>
             <div class="person-role">Trinity College Dublin, Ireland</div>
           </div>
           <div class="person">
-            <div class="person-name">Qinwen Deng</div>
+            <div class="person-name">Qinwen Deng (qinwen.deng@ntu.edu.sg)</div>
             <div class="person-role">Nanyang Technological University, Singapore</div>
           </div>
           <div class="person">
-            <div class="person-name">Qu Luo</div>
+            <div class="person-name">Qu Luo (q.u.luo@surrey.ac.uk)</div>
             <div class="person-role">University of Surrey, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">Fan Zhang</div>
+            <div class="person-name">Fan Zhang (zf22@mails.tsinghua.edu.cn)</div>
             <div class="person-role">Tsinghua University, China</div>
           </div>
         </div>
@@ -440,27 +414,27 @@
         <h2>Steering Committee Members</h2>
         <div class="people">
           <div class="person">
-            <div class="person-name">Sumei Sun</div>
+            <div class="person-name">Sumei Sun (sunsm@a-star.edu.sg)</div>
             <div class="person-role">Agency for Science, Technology and Research, Singapore</div>
           </div>
           <div class="person">
-            <div class="person-name">Yong Liang Guan</div>
+            <div class="person-name">Yong Liang Guan (eylguan@ntu.edu.sg)</div>
             <div class="person-role">Nanyang Technological University, Singapore</div>
           </div>
           <div class="person">
-            <div class="person-name">Christos Masouros</div>
+            <div class="person-name">Christos Masouros (c.masouros@ucl.ac.uk)</div>
             <div class="person-role">University College London, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">Pei Xiao</div>
+            <div class="person-name">Pei Xiao (p.xiao@surrey.ac.uk)</div>
             <div class="person-role">University of Surrey, U.K.</div>
           </div>
           <div class="person">
-            <div class="person-name">Pingzhi Fan</div>
+            <div class="person-name">Pingzhi Fan (pzfan@swjtu.edu.cn)</div>
             <div class="person-role">Southwest Jiaotong University, China</div>
           </div>
           <div class="person">
-            <div class="person-name">Lajos Hanzo</div>
+            <div class="person-name">Lajos Hanzo (lh@ecs.soton.ac.uk)</div>
             <div class="person-role">University of Southampton, U.K.</div>
           </div>
         </div>
