@@ -232,6 +232,124 @@
       margin-top: 16px;
     }
 
+    .program-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+
+    .program-meta-item {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--accent);
+    }
+
+    .program-meta-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .program-session {
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fcfdff;
+    }
+
+    .session-heading {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      padding: 16px 18px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .session-heading h3 {
+      margin: 0 0 2px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .session-heading p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.9rem;
+    }
+
+    .session-time {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .program-item.keynote {
+      background: #f4f8ff;
+      box-shadow: inset 4px 0 0 var(--secondary);
+    }
+
+    .program-time {
+      color: var(--primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .program-label {
+      display: inline-block;
+      margin-bottom: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: #dce9ff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .program-item h4 {
+      margin: 0;
+      color: #172554;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .program-speakers {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .program-break {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 16px;
+      margin: 14px 0;
+      padding: 14px 18px;
+      border: 1px solid #c9d9f2;
+      border-radius: 12px;
+      color: var(--primary);
+      background: #eef5ff;
+      font-weight: 700;
+    }
+
     footer {
       padding: 22px 0 38px;
       color: var(--muted);
@@ -240,7 +358,7 @@
     }
 
     @media (max-width: 900px) {
-      .grid-2, .people {
+      .grid-2, .people, .program-meta {
         grid-template-columns: 1fr;
       }
 
@@ -249,21 +367,8 @@
       }
 
       header {
-        height: 240px;
-        background-size: cover;
-      }
-
-      .hero {
-        padding-top: 28px;
-      }
-    }
-
-      .date-item {
-        flex-direction: column;
-      }
-
-      header {
         height: 300px;
+        background-size: cover;
       }
 
       .hero {
@@ -273,29 +378,38 @@
 
     @media (max-width: 640px) {
       section { padding: 22px 18px; }
-      nav { gap: 10px; }
+
       header {
-        height: 260px;
+        height: auto;
+        min-height: 330px;
         background-size: cover;
       }
+
       .topbar {
         position: static;
         justify-content: center;
         padding-top: 10px;
       }
-      .hero {
-        padding-top: 10px;
-      }
-    }
-      nav { gap: 12px; }
-      header { height: 320px; }
-      .topbar {
-        position: static;
+
+      nav {
         justify-content: center;
-        padding-top: 12px;
+        gap: 10px;
       }
+
       .hero {
-        padding-top: 16px;
+        padding: 24px 0 32px;
+      }
+
+      .session-heading,
+      .program-item,
+      .program-break {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .session-time,
+      .program-time {
+        white-space: normal;
       }
     }
   </style>
@@ -309,6 +423,7 @@
           <a href="#overview">Overview</a>
           <a href="#cfp">Call for Papers</a>
           <a href="#dates">Important Dates</a>
+          <a href="#program">Program</a>
           <a href="#organizers">Organizers</a>
           <a href="#tpc">TPC Co-chairs</a>
           <a href="#steering">Steering Committee</a>
@@ -423,6 +538,267 @@
     Workshop date: 1–4 September 2026, Singapore.
   </div>
 </section>
+
+      <section id="program">
+        <h2>Workshop Program</h2>
+        <p>Full-day workshop program for “Advanced Waveforms for 6G and Beyond: Communications, Sensing, Localization and Their Integration.”</p>
+
+        <div class="program-meta">
+          <div class="program-meta-item">
+            <span class="program-meta-label">Date &amp; Time</span>
+            Tuesday, 1 September 2026<br />09:00–18:30
+          </div>
+          <div class="program-meta-item">
+            <span class="program-meta-label">Room</span>
+            Hibicus Jnr 3713
+          </div>
+          <div class="program-meta-item">
+            <span class="program-meta-label">Workshop Chairs</span>
+            Yao Ge, Tianqi Mao, Qinwen Deng, and Yirui Luo
+          </div>
+        </div>
+
+        <div class="program-session">
+          <div class="session-heading">
+            <div class="session-time">09:00–10:40</div>
+            <div>
+              <h3>Technical Session 1 · Invited Talk and Oral Presentations</h3>
+              <p>Chair: Dr. Yao Ge</p>
+            </div>
+          </div>
+
+          <article class="program-item keynote">
+            <div class="program-time">09:00–09:45</div>
+            <div>
+              <span class="program-label">Keynote 1</span>
+              <h4>DDAM-OFDM for 6G Communications and Sensing</h4>
+              <p class="program-speakers"><strong>Invited Speaker:</strong> Prof. Yong Zeng, IEEE Fellow, Southeast University, China</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">09:45–10:03</div>
+            <div>
+              <h4>Deep Learning-Aided Adaptive AFDM Parameter Design for High Mobility Communications</h4>
+              <p class="program-speakers">Mingjin Yang, Qingpeng Yang and Chao Ding (Huazhong University of Science and Technology, China); Yirui Luo (Nanyang Technological University, Singapore); Yin Xu (ShangHai Jiao Tong University, China); Lixia Xiao (Huazhong University of Science and Technology, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">10:03–10:21</div>
+            <div>
+              <h4>Fundamental Limits and CRB-Achieving Estimation of Breathing Rate in Monostatic Wireless Sensing</h4>
+              <p class="program-speakers">Han-Gyeol Lee and Jingon Joung (Chung-Ang University, Korea (South)); Chin Keong Ho (Serentinel, Singapore)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">10:21–10:39</div>
+            <div>
+              <h4>STBC-Aided Constant-Envelope OFDM for MIMO Frequency-Selective Fading Channels</h4>
+              <p class="program-speakers">Xuan Lin, Hao Chen, Yue Xiao, Shuaixin Yang, Lilin Dan and Gang Wu (University of Electronic Science and Technology of China, China)</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="program-break">
+          <div>10:40–11:00</div>
+          <div>Coffee Break</div>
+        </div>
+
+        <div class="program-session">
+          <div class="session-heading">
+            <div class="session-time">11:00–12:50</div>
+            <div>
+              <h3>Technical Session 2 · Oral Presentations</h3>
+              <p>Chair: Prof. Tianqi Mao</p>
+            </div>
+          </div>
+
+          <article class="program-item">
+            <div class="program-time">11:00–11:18</div>
+            <div>
+              <h4>A Parsimonious Geometric Shaping Framework for Integrated Sensing and Communications</h4>
+              <p class="program-speakers">Mustafa Ozgun Karagoz (Technical University of Munich, Germany); Wen Xu (Huawei Technologies Duesseldorf GmbH &amp; - European Research Center (ERC), Germany)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">11:18–11:36</div>
+            <div>
+              <h4>AFDM-Aided Grouped RSMA for High-Mobility Downlink Transmissions</h4>
+              <p class="program-speakers">Li Zhen and Qingzhi Meng (Xi'an University of Posts and Telecommunications, China); Yurong Guo (Xi'an University of Posts &amp; Telecommunications, China); Jingrui Su and Yuxuan He (Xi'an University of Posts and Telecommunications, China); Yanqun Tang (Sun Yat-sen University, China); Jing Jiang (Xi'an University of Posts and Telecommunications, China); Derrick Wing Kwan Ng (University of New South Wales, Australia)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">11:36–11:54</div>
+            <div>
+              <h4>AGGC: Anchor-Guided Geodesic Charting for Few-Label CSI Indoor Localization</h4>
+              <p class="program-speakers">Chen Jianrui, Xinghe Chu, Anpei Li and Minchi Ruan (Beijing University of Posts and Telecommunications, China); Zhirui Yin (Beijing University of Posts and Telecommunication, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">11:54–12:12</div>
+            <div>
+              <h4>A Dual-Functional Affine Frequency Division Multiplexing Waveform for ISAC Systems: Design and Optimization</h4>
+              <p class="program-speakers">Ke Jiang, Jingxuan Wang, Qin Yi, Ping Yang and Xingyu Du (University of Electronic Science and Technology of China, China); Agata Manolova (Technical University of Sofia, Bulgaria); Yue Xiao and Gang Wu (University of Electronic Science and Technology of China, China); Saviour Zammit (University of Malta, Malta)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">12:12–12:30</div>
+            <div>
+              <h4>A Stochastic Resonance Framework for PAPR Reduction in Multi-Carrier Waveforms: Simulation and Experimental Validation</h4>
+              <p class="program-speakers">Yalin Zhou (University College London, United Kingdom (Great Britain)); Masanori Hamamura (Kochi University of Technology, Japan); Izzat Darwazeh (University College London, United Kingdom (Great Britain))</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">12:30–12:48</div>
+            <div>
+              <h4>Non-Binary LDPC-Coded LACO-OFDM Visible Light Communication Systems with Adapted VNSMM Interleaving</h4>
+              <p class="program-speakers">Gaurav Gupta (IIIT Delhi, India); Vivek A Bohara (Indraprastha Institute of Information Technology, Delhi, India)</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="program-break">
+          <div>12:50–13:40</div>
+          <div>Lunch Break</div>
+        </div>
+
+        <div class="program-session">
+          <div class="session-heading">
+            <div class="session-time">13:40–15:40</div>
+            <div>
+              <h3>Technical Session 3 · Invited Talk and Oral Presentations</h3>
+              <p>Chair: Dr. Qinwen Deng</p>
+            </div>
+          </div>
+
+          <article class="program-item keynote">
+            <div class="program-time">13:40–14:25</div>
+            <div>
+              <span class="program-label">Keynote 2</span>
+              <h4>Random Multiplexing: Toward the Capacity Limits of Linear Interference Channels</h4>
+              <p class="program-speakers"><strong>Invited Speaker:</strong> Prof. Lei Liu, Zhejiang University, China</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">14:25–14:43</div>
+            <div>
+              <h4>Subframe Combined Barycenter Calibration in OTFS-ISAC Systems for Out-of-Range Channel</h4>
+              <p class="program-speakers">Zhenyu Zhang, Qianli Wang, Weijie Wang and Gang Liu (Southwest Jiaotong University, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">14:43–15:01</div>
+            <div>
+              <h4>STAR-RIS-Assisted OTFS-NOMA with Residual Phase: Outage Analysis &amp; Throughput Optimization</h4>
+              <p class="program-speakers">Rakesh Sharma, Ankur Bansal and Ankit Dubey (Indian Institute of Technology Jammu, India)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">15:01–15:19</div>
+            <div>
+              <h4>Adaptive Fractional Doppler Estimation and MMSE Detection for Consecutive RW-OTFS Transmission in Phase-Rotating Delay-Doppler Domain Channel</h4>
+              <p class="program-speakers">Haotian Xiu, Peiyuan Gao and Lin Yang (University of Electronic Science and Technology of China, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">15:19–15:37</div>
+            <div>
+              <h4>Hardware-Impaired Massive MIMO ISAC System Under the Finite-Blocklength Regime</h4>
+              <p class="program-speakers">Abhilash Ranjan (IIT Roorkee, India); P. Joyce Shreya (Indian Institute of Technology, Roorkee, India); Ekant Sharma (Indian Institute of Technology Roorkee, India)</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="program-break">
+          <div>15:40–16:00</div>
+          <div>Coffee Break</div>
+        </div>
+
+        <div class="program-session">
+          <div class="session-heading">
+            <div class="session-time">16:00–18:30</div>
+            <div>
+              <h3>Technical Session 4 · Oral Presentations</h3>
+              <p>Chair: Miss. Yirui Luo</p>
+            </div>
+          </div>
+
+          <article class="program-item">
+            <div class="program-time">16:00–16:18</div>
+            <div>
+              <h4>Secrecy Rate Maximization for UAV-Mounted Six-Dimensional Movable IRS-Assisted ISAC Systems</h4>
+              <p class="program-speakers">Chengye Hong, Botang Shi, Rongkun Zhu, Yuhan Wang, Chenyiming Jiang and Lei Xie (Southeast University, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">16:18–16:36</div>
+            <div>
+              <h4>FBMC/QAM-Based Downlink Multi-User MISO Systems: Transceiver Design and Analysis</h4>
+              <p class="program-speakers">Sudhakar Rai (IIT Kanpur, India); Prem Singh (IIIT Bangalore, India); Ekant Sharma (Indian Institute of Technology Roorkee, India); Aditya K Jagannatham (Indian Institute of Technology Kanpur, India)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">16:36–16:54</div>
+            <div>
+              <h4>PAPR Reduction for AFDM Systems via One-Dimensional Convolutional Neural Networks</h4>
+              <p class="program-speakers">Chen Zihao, Yanqun Tang and Kangjie Xu (Sun Yat-sen University, China); Caiqin Li (Northeastern University at Qinhuangdao, China); Tianqi Mao (Beijing Institute of Technology, China); Haihong Wang (National University of Defense Technology, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">16:54–17:12</div>
+            <div>
+              <h4>Value of Service Maximization in ISAC Systems with Computation-Aware Sensing</h4>
+              <p class="program-speakers">Biwei Li (Southeast University, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">17:12–17:30</div>
+            <div>
+              <h4>Rate-Splitting SCMA (RS-SCMA) over OFDM: Subcarrier Mapping and Frequency Diversity</h4>
+              <p class="program-speakers">Minerva Priyadarsini (IIT Goa, India); Kuntal Deka (IIT Guwahati, India); Zilong Liu (University of Essex, United Kingdom (Great Britain)); Sanjeev Sharma (IIT BHU, India)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">17:30–17:48</div>
+            <div>
+              <h4>Hybrid CNN-Transformer-Based Modulation Optimization for UWA Communications with High Mobility</h4>
+              <p class="program-speakers">Jiaye Liu (Tianjin University, China); Xuehan Wang (China Mobile Research Institute, China); Jiasong Han and Jintao Wang (Tsinghua University, China)</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">17:48–18:06</div>
+            <div>
+              <h4>Superposition Coding-Assisted DFT-s-OFDM: A Trade-off Between PAPR and Spectral Efficiency</h4>
+              <p class="program-speakers">Rahul Makkar (The LNM Institute of Information Technology, India); Divyang Rawal (LNMIIT, India); Vijay Kumar Chakka (Shiv Nadar University Greater Noida, India); Pei Xiao (University of Surrey, United Kingdom (Great Britain))</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-time">18:06–18:24</div>
+            <div>
+              <h4>DAFT Domain Artificial Noise Design for Secure AFDM Transmission over Doubly Dispersive Channels</h4>
+              <p class="program-speakers">Yibo Wang, Wei Liu, Jinkun Zhu and Yuhang Tang (National University of Defense Technology, China)</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <section id="organizers">
         <h2>Organizers</h2>
